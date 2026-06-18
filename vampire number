@@ -1,0 +1,36 @@
+import java.util.*;
+class Main {
+    static boolean f(String s[],int i,int j,int n){
+        String temp=s[i];
+        s[i]=s[j];
+        s[j]=temp;
+       StringBuilder sr=new StringBuilder();
+       for(int r=0;r<s.length;r++){
+           sr.append(s[r]);
+       }
+       String str=sr.toString();
+       String r1=str.substring(0,str.length()/2);
+       String r2=str.substring(str.length()/2,str.length());
+       int l1=Integer.parseInt(r1);
+       int l2=Integer.parseInt(r2);
+        String tem=s[i];
+        s[i]=s[j];
+        s[j]=tem;
+        return l1*l2==n;
+    }
+    public static void main(String[] args) {
+        int n=1260;
+        String c=Integer.toString(n);
+        String s[]=c.split("");
+        for(int i=0;i<s.length-1;i++){
+            for(int j=i+1;i<s.length;i++){
+              boolean b=f(s,i,j,n);
+              if(b==true){
+                  System.out.print("true");
+                  return;
+              }
+            }
+        }
+        System.out.print("false");
+    }
+}
