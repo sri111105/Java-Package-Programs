@@ -1,0 +1,49 @@
+import java.util.*;
+
+class Main {
+
+    public static void main(String args[]) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+        String t = sc.nextLine();
+
+        if (s.length() != t.length()) {
+            System.out.println("The string cannot be transformed");
+            return;
+        }
+
+        int[] freq = new int[256];
+
+        for (int i = 0; i < s.length(); i++) {
+            freq[s.charAt(i)]++;
+            freq[t.charAt(i)]--;
+        }
+
+        for (int x : freq) {
+            if (x != 0) {
+                System.out.println("The string cannot be transformed");
+                return;
+            }
+        }
+
+        int i = s.length() - 1;
+        int j = t.length() - 1;
+
+        int count = 0;
+
+        while (i >= 0) {
+
+            if (s.charAt(i) == t.charAt(j)) {
+                i--;
+                j--;
+            } else {
+                count++;
+                i--;
+            }
+        }
+
+        System.out.println(count);
+    }
+}
