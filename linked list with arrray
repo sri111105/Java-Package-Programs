@@ -1,0 +1,37 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3};
+        int arr2[] = {1, 2};
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        // 1. Optimized Loop: Condition matrix illama skip panrom (O(N))
+        for (int i = 0; i < arr.length; i += 3) {
+            if (i < arr.length) list.add(arr[i]);
+            if (i + 1 < arr.length) list.add(arr[i + 1]);
+            // i + 2 automatic-ah skip aagidum!
+        }
+        
+        System.out.println("after deleting every 3rd index:");
+        for (int val : list) { // Enhanced for-loop (Sema clean-a irukum)
+            System.out.print(val + " ");
+        }
+        System.out.println();
+        
+        // 2. Common Elements Optimization (O(N) Time Complexity)
+        // Array-la irukra elements-ah set-la pottuka, duplicate skip aagi search fast aagum
+        HashSet<Integer> set = new HashSet<>();
+        for (int val : arr2) {
+            set.add(val);
+        }
+        
+        System.out.println("common element present in the linked list:");
+        for (int val : list) {
+            // Set-la intha element iruka nu O(1) speed-la check pannidum
+            if (set.contains(val)) {
+                System.out.print(val + " ");
+            }
+        }
+    }
+}
