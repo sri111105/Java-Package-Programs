@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main
+{
+    static double getavg(int[] arr)
+    {
+        int sum=0;
+        for(int i:arr)
+        {
+            sum+=i;
+        }
+        int n=arr.length;
+        double avg=sum/n;
+        return avg;
+    }
+    public static void main(String[] args)
+    {
+        int arr[]={2,4,3,3};
+        System.out.print(getavg(arr));
+    }
+}
