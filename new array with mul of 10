@@ -1,0 +1,24 @@
+public class Main {
+
+    static int[] mul(int[] arr) {
+
+        int[] arr1 = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            arr1[i] = arr[i] * 10;
+        }
+
+        return arr1;
+    }
+
+    public static void main(String[] args) {
+
+        int[] arr = {1, 2, 3, 4, 5};
+
+        int[] ans = mul(arr);
+
+        for (int i : ans) {
+            System.out.print(i + " ");
+        }
+    }
+}
