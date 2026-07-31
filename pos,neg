@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main
+{
+    static int[] mul(int[] arr)
+    {
+        int posi=0;
+        int neg=0;
+        for(int i:arr)
+        {
+            if(i>0)
+            {
+                posi+=i;
+            }
+            else
+            {
+                neg+=i;
+            }
+        }
+        int ans[]={posi,neg};
+        return ans;
+
+    }
+    public static void main(String[] args)
+    {
+        int arr[]={2,-3,-5,-7,9};
+     int ans[]=mul(arr);
+     System.out.print(ans[0]);
+     System.out.print(ans[1]);
+    }
+}
