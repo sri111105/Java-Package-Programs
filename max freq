@@ -1,0 +1,32 @@
+import java.util.*;
+class Main {
+    static int shift(int[] arr)
+    {
+     HashMap<Integer,Integer> m=new HashMap<>();
+     for(int i:arr)
+     {
+         m.put(i,m.getOrDefault(i,0)+1);
+     }
+     int max=Integer.MIN_VALUE;
+     for(int i:arr)
+     {
+         if(m.get(i)>max)
+         {
+             max=m.get(i);
+         }
+     }
+     for(int i:arr)
+     {
+         if(max==m.get(i))
+         {
+             return i;
+         }
+     }
+     return -1;
+    }
+    public static void main(String[] args) {
+      int arr[]={1,1,2,2,2,3,4,5};
+      int ans= shift(arr);
+      System.out.print(ans);
+    }
+}
