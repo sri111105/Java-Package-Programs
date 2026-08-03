@@ -1,0 +1,24 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> l=new ArrayList<>();
+        int arr[]={3,2,3,4,5};
+        for(int i=0;i<arr.length;i++)
+        {
+            int value=Math.abs(arr[i]);
+            int position=value-1;
+            if(arr[position]>0)
+            {
+                arr[position]=-arr[position];
+            }
+        }
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>0)
+            {
+                l.add(i+1);
+            }
+        }
+        System.out.print(l);
+    }
+}
