@@ -1,0 +1,16 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 2, 3, 2, 1};
+        Map<Integer, Integer> freqMap = new HashMap<>();
+        for (int num : arr) {
+            freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+        }
+        int twinPairsCount = 0;
+        for (int count : freqMap.values()) {
+            twinPairsCount += (count*(count-1)) / 2; 
+        }  
+        System.out.println("Total twin pairs: " + twinPairsCount); 
+    }
+}
