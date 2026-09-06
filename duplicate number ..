@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        ArrayList<Integer> l=new ArrayList<>();
+        String input = sc.nextLine();
+        String[] values = input.split(" ");
+        int[] nums = new int[values.length];
+        for (int i = 0; i < values.length; i++) {
+            nums[i] = Integer.parseInt(values[i]);
+        }
+        int target = sc.nextInt();
+      for(int i=0;i<nums.length;i++)
+          {
+              if(target!=nums[i])
+              {
+                  l.add(nums[i]);
+              }
+          }
+        System.out.print("num :"+target + "final id :" +l);
+    }
+}
